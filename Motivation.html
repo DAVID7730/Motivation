@@ -79,31 +79,31 @@
             "concentration", "engagement", "espoir", "joie", "amour", "vision", "potentiel", "bravoure", "liberté"
         ];
 
-          fonction.   Hôtels de la Phrase Aleatoire() {
-            Const. motsDisponibles = [...mots]; 
- <! DOCTYPE html>motsAleatoires   motsAleatoires =    [];
-<html lang="Fr">"Fr"  > Cont.  min.(3, le plus responsable.length);min(3, le plus responsable.length);length);
+        function genererPhraseAleatoire() {
+            const motsDisponibles = [...mots]; 
+            const motsAleatoires = [];
+            const nombreDeMots = Math.min(3, motsDisponibles.length);
 
-   <meta charset=Pour ?   
- <meta name=Const. indexAleatoire indexAleatoire = Math.plancher. (Math.random ()   * le plus responsable. length)  ;    contenu =  
-                           motsAleatoires.        [indexAleatoire]); push(motsDisponibles[indexAleatoire]); push(motsDisponibles[indexAleatoire]);  push(motsDisponibles[indexAleatoire]); push(motsDisponibles[indexAleatoire]); push(motsDisponibles[indexAleatoire]); push(motsDisponibles[indexAleatoire]);  
-      les plus responsables.      
-    corps    
-                  motsAleatoires.   + '!'; return     motsAleatoires.   join(' ').charAt(0).toUpperCase()     + motsAleatoires.   join(' ').slice(1) + '!'; 'Arial', sans-serif ; return     motsAleatoires.   join(' ').charAt(0).toUpperCase()     + motsAleatoires.   join(' ').slice(1) + '!';
-     arrière-plan : gradient     
+            for (let i = 0; i < nombreDeMots; i++) {
+                const indexAleatoire = Math.floor(Math.random() * motsDisponibles.length);
+                motsAleatoires.push(motsDisponibles[indexAleatoire]);
+                motsDisponibles.splice(indexAleatoire, 1);
+            }
+            return motsAleatoires.join(' ').charAt(0).toUpperCase() + motsAleatoires.join(' ').slice(1) + '!';
+        }
 
-   affichage : flex ; fonction   
-                const nouvelleCitation = genererPhraseAleatoire();  const nouvelleCitation = genererPhraseAleatoire();  const nouvelleCitation = genererPhraseAleatoire()    nouvelleCitation =   genererPhraseAleatoire() );  const nouvelleCitation = genererPhraseAleatoire();  const nouvelleCitation = genererPhraseAleatoire();   const nouvelleCitation = genererPhraseAleatoire();  const nouvelleCitation = genererPhraseAleatoire()  ;    nouvelleCitation =     const  nouvelleCitation =  genererPhraseAleatoire();  const nouvelleCitation = genererPhraseAleatoire();   const nouvelleCitation = genererPhraseAleatoire();  const nouvelleCitation = genererPhraseAleatoire() ;    nouvelleCitation =   genererPhraseAleatoire() genererPhraseAleatoire();  const nouvelleCitation = genererPhraseAleatoire();  const nouvelleCitation = genererPhraseAleatoire();   const nouvelleCitation = genererPhraseAleatoire();  const nouvelleCitation = genererPhraseAleatoire();   const nouvelleCitation = genererPhraseAleatoire();  const nouvelleCitation = genererPhraseAleatoire();   const nouvelleCitation = genererPhraseAleatoire();  const nouvelleCitation = genererPhraseAleatoire();  
- align-items : centre ; const quoteElement  = document.  getElementById ("quote") ;const quoteElement        = document.      getElementById('quote');
-    flex-direction : colonne ; textContent  = nouvelleCitation; textContent = nouvelleCitation;  
-                  quoteElement.      
- marge : 0; setTimeout (() => {marge : 0; setTimeout (() => {
-     transition : rallongement du fond     
- } }, 300);} }, 300);
-            .container    
- Text-align : centre ; }} }} }}
+        function newQuote() {
+            const nouvelleCitation = genererPhraseAleatoire();
+            const quoteElement = document.getElementById('quote');
+            quoteElement.textContent = nouvelleCitation;
+            quoteElement.style.transform = 'scale(1.1)'; // Animation d'agrandissement
+            setTimeout(() => {
+                quoteElement.style.transform = 'scale(1)'; // Réinitialise l'échelle
+            }, 300);
+            document.getElementById('message').textContent = '';
+        }
 
-    frontière :    
-  Radius Frontière :  
-</corps.
-</HTML./HTML./HTML./HTML./HTML./HTML.
+        window.onload = newQuote; // Affiche une citation au chargement de la page
+    </script>
+</body>
+</html>
